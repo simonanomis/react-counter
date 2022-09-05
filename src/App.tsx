@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import Counter from './containers/Counter/Counter';
 import './App.css';
-import { Dispatch } from "redux"
 
 class App extends Component {
 

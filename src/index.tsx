@@ -7,6 +7,7 @@ import './index.css';
 
 import reducer from "./store/reducer";
 import App from "./App";
+import {CounterAction, CounterState, DispatchType} from "./type";
 
 //Provider is a helper component that allows us to kind of inject our store into the React components
 
