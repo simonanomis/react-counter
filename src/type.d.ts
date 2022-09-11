@@ -1,16 +1,28 @@
 interface CounterProps {
-    ctr: number;
+    counter: number;
     onIncrementCounter: () => void;
     onDecrementCounter: () => void;
     onAddCounter: () => void;
     onSubtractCounter: () => void;
-    onStoreResult: () => void;
+    onStoreResult: (result: number) => void;
     onDeleteResult: (id: string) => void;
-    results?: numbers[]
+    results: numbers[]
 }
 
 interface CounterState {
     counter: number;
+    results: numbers[]
+}
+
+interface AppState {
+    counter: CounterReducerState;
+    results: ResultReducerState;
+}
+interface CounterReducerState {
+    counter: number;
+}
+
+interface ResultReducerState {
     results: numbers[]
 }
 
@@ -23,6 +35,7 @@ type CounterAction = {
     type: string
     value: number
     resultId: string
+    result: number
 }
 
 export enum ECounterOperations{
