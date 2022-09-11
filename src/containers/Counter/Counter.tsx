@@ -7,14 +7,10 @@ import {CounterProps} from "../../type";
 
 class Counter extends Component<CounterProps> {
     state = {
-        counter: 0,
-        results: []
+        counter: 0
     }
 
     render () {
-        console.log(this.props.results)
-        console.log(this.props.ctr)
-
         return (
             <div>
                 <CounterOutput value={this.props.ctr} />
@@ -26,7 +22,7 @@ class Counter extends Component<CounterProps> {
                 <button onClick={this.props.onStoreResult}>Store Result</button>
                 <ul>
                     {this.props.results?.map(storedResult => (
-                        <li key={storedResult.id} onClick={this.props.onDeleteResult}>{storedResult.value}</li>
+                        <li key={storedResult.id} onClick={() => this.props.onDeleteResult(storedResult.id)}>{storedResult.value}</li>
                     ))}
 
                 </ul>
@@ -52,7 +48,7 @@ const mapDispatchToProps = (dispatch: any) => {
         onAddCounter: () => dispatch({type: actionTypes.ADD, value: 10}),
         onSubtractCounter: () => dispatch({type: actionTypes.SUBTRACT, value: 15}),
         onStoreResult: () => dispatch({type: actionTypes.COUNT_RESULT}),
-        onDeleteResult: () => dispatch({type: actionTypes.DELETE_RESULT})
+        onDeleteResult: (id: string) => dispatch({type: actionTypes.DELETE_RESULT, resultId: id})
     };
 };
 

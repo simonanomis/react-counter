@@ -1,5 +1,3 @@
-
-
 interface CounterProps {
     ctr: number;
     onIncrementCounter: () => void;
@@ -7,7 +5,7 @@ interface CounterProps {
     onAddCounter: () => void;
     onSubtractCounter: () => void;
     onStoreResult: () => void;
-    onDeleteResult: () => void;
+    onDeleteResult: (id: string) => void;
     results?: numbers[]
 }
 
@@ -24,6 +22,7 @@ interface CounterValues {
 type CounterAction = {
     type: string
     value: number
+    resultId: string
 }
 
 export enum ECounterOperations{

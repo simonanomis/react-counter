@@ -33,8 +33,13 @@ const reducer = (state: CounterState = initialState, action: CounterAction) => {
         case actionTypes.COUNT_RESULT:
             return {
                 ...state,
-                results: state.results.concat({id: id, value: state.counter})
+                results: state.results.concat({id, value: state.counter})
             }
+        case actionTypes.DELETE_RESULT:
+            const copyOfResults = state.results.filter((result) => result.id != action.resultId);
+            return {
+                ...state,
+                results: copyOfResults            }
     }
     return state;
 };
