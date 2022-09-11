@@ -25,7 +25,7 @@ const counterReducer = (state: CounterReducerState = initialState, action: Count
         case actionTypes.SUBTRACT:
             return {
                 ...state,
-                counter: state.counter + action.value
+                counter: state.counter - action.value
             }
     }
     return state;

@@ -1,5 +1,7 @@
 # react-counter
-Simple application creating counter with incrementing, decrementing, adding and substracting 
+Simple typescript React application creating counter with incrementing, 
+decrementing, adding and subtracting. You can store and delete the result, 
+as well to display the current result.
 
 ## In the project directory, you can run:
 
@@ -17,5 +19,9 @@ Simple application creating counter with incrementing, decrementing, adding and 
 ### `npm install --save raact-redux`
 
 
-**We are creating redux-basics.js so we can see how store, reducer etc is created without React.
+**I created redux-basics.js so we can see how store, reducer etc is created without React.
 We can execute this file only with command: node redux-basics.js**
+
+## App Preview
+
+![img.png](img.png)
