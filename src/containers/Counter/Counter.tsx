@@ -5,7 +5,7 @@ import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import {connect} from "react-redux";
 import {AppState, CounterProps} from "../../type";
-import {decrement} from "../../store/actions/actionCreators";
+import './Counter.scss';
 
 class Counter extends Component<CounterProps> {
     state = {
@@ -22,7 +22,7 @@ class Counter extends Component<CounterProps> {
                 <CounterControl label="Subtract 15" clicked={this.props.onSubtractCounter}  />
                 <hr/>
                 <button onClick={() => this.props.onStoreResult(this.props.counter)}>Store Result</button>
-                <ul>
+                <ul className="gradient-list">
                     {this.props.results.map(storedResult => (
                         <li key={storedResult.id} onClick={() => this.props.onDeleteResult(storedResult.id)}>{storedResult.value}</li>
                     ))}
