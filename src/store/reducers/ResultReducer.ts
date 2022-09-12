@@ -1,4 +1,4 @@
-import * as actionTypes from "../actionTypes"
+import * as actionTypes from "../actions/actionTypes"
 import { v4 as uuid } from 'uuid';
 import {CounterAction, CounterState, ResultReducerState} from "../../type";
 
