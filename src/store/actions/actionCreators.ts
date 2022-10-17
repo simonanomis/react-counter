@@ -1,4 +1,5 @@
 import * as actionTypes from "./actionTypes"
+import { Dispatch } from 'redux';
 
 export const increment = () => {
     return {
@@ -26,10 +27,18 @@ export const subtract = (value: number) => {
     }
 };
 
-export const storeResult = (result: number) => {
+export const saveResult = (result: number) => {
     return {
         type: actionTypes.COUNT_RESULT,
         result: result
+    }
+};
+
+export const storeResult = (result: number) => {
+    return (dispatch: Dispatch) => {
+        setTimeout(() => {
+            dispatch(saveResult(result));
+        }, 2000);
     }
 };
 

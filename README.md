@@ -18,6 +18,12 @@ as well to display the current result.
 
 ### `npm install --save raact-redux`
 
+## Add Redux Thunk -- library which adds a middleware to your project which allows your action creators
+## to not return the action itself but to return a function which will dispatch an action. 
+## This allows us to run async code.
+
+### `npm install --save redux-thunk`
+
 
 **I created redux-basics.js so we can see how store, reducer etc is created without React.
 We can execute this file only with command: node redux-basics.js**
