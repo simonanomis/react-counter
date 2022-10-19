@@ -1,17 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './CounterControl.css';
+import "./CounterControl.css";
 
 interface CounterControlProps {
-    clicked: () => void;
-    label: string;
+  clicked: () => void;
+  label: string;
 }
 
-
-const counterControl = ({clicked, label}: CounterControlProps) => (
-    <div className="CounterControl" onClick={clicked}>
-        {label}
-    </div>
+const counterControl = ({ clicked, label }: CounterControlProps) => (
+  <div className="CounterControl" onClick={clicked}>
+    {label}
+  </div>
 );
 
 export default counterControl;
