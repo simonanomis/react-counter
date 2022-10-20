@@ -6,6 +6,13 @@ const initialState: ResultReducerState = {
   results: [],
 };
 
+const deleteResult = (state: ResultReducerState, action: CounterAction) => {
+  const copyOfResults = state.results.filter(
+    (result: any) => result.id != action.resultId
+  );
+  return updateObjectCounter(state, { results: copyOfResults });
+};
+
 const resultReducer = (
   state: ResultReducerState = initialState,
   action: CounterAction
@@ -17,12 +24,8 @@ const resultReducer = (
       return updateObjectCounter(state, {
         results: state.results.concat({ id, value: action.result }),
       });
-
     case actionTypes.DELETE_RESULT:
-      const copyOfResults = state.results.filter(
-        (result: any) => result.id != action.resultId
-      );
-      return updateObjectCounter(state, { results: copyOfResults });
+      return deleteResult(state, action);
   }
   return state;
 };
